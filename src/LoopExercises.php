@@ -1,8 +1,12 @@
 <?php
 
+/**
+ * Cette classe contient un ensemble de fonctions à compléter qui vous permettront de vous entraîner à l'utilisation de boucles.
+ * 
+ * Pour chacune des fonctions pensez à écrire un pseudo-code qui vous permettra de réfléchir à la logique à implémenter.
+ */
 class LoopExercises
 {
-
     /**
      * Calcule la somme des entiers de 0 jusqu'à n (inclus).
      *
@@ -16,7 +20,7 @@ class LoopExercises
     public static function sumUpTo(int $n): int
     {
         // TODO compléter la fonction avec une boucle for ou while
-      
+
         return -1;
     }
 
@@ -41,57 +45,54 @@ class LoopExercises
      */
     public static function estimateSubscribers(int $initialSubscribers, float $growthRate, int $months): int
     {
-        // Conversion du pourcentage en coefficient multiplicateur (5% => 1.05)
-        $growthCoefficient = 1 + ($growthRate / 100);
+        // variable qui contiendra le résultat
+        $estimatedSubscribers = 0;
 
-        // Calcul du nombre d'abonnés après 'months' mois
-        $estimatedSubscribers = $initialSubscribers * pow($growthCoefficient, $months);
-
-        // On arrondit à l'entier supérieur (ou inférieur, selon préférence)
         // Indice : pour arrondir un entier il vous est possible d'utiliser la fonction "round" (https://www.php.net/manual/en/function.round.php)
-        return (int) round($estimatedSubscribers);
+        return $estimatedSubscribers;
     }
 
     /**
-     * Retrouve et retourne l'index de la plus longue chaîne de caractères d'un tableau.
+     * Calcule et retourne la factorielle d’un nombre donné.
+     * Exemple : factorial(5) retourne 120 (car 5 × 4 × 3 × 2 × 1)
+     * Utiliser une boucle for.
      * 
-     * @param array $strings Tableau de chaînes de caractères
-     * @return int Index de la plus longue chaîne
+     * Plus d'informations sur le factorielle : https://fr.wikipedia.org/wiki/Factorielle
+     * 
+     * Pensez à écrire le pseudo-code avant d'écrire la fonction PHP
+     *
+     * @param int $n Le nombre dont on veut calculer la factorielle
+     * @return int La factorielle de $n
      */
-    public static function findLongestString(array $strings): int
+    function factorial($n): int
     {
+        // TODO : Utiliser une boucle for pour calculer la factorielle
 
-        // Indice : pour trouver la longueur d'une chaîne de caracètres il est possible d'utiliser la fonction
-        // "strlen" (https://www.php.net/manual/fr/function.strlen.php)
-        $maxLength = -1;
-        $indexLongest = -1;
-
-        foreach ($strings as $index => $str) {
-            if (strlen($str) > $maxLength) {
-                $maxLength = strlen($str);
-                $indexLongest = $index;
-            }
-        }
-
-        return $indexLongest;
+        return 0;
     }
 
     /**
-     * Crée une liste de tous les nombres impairs contenus dans un tableau d'entiers.
+     * Retourne la somme des chiffres d’un nombre entier positif.
      * 
-     * @param array $array Tableau d'entiers
-     * @return array Tableau contenant uniquement les valeurs impaires
+     * Exemple :
+     * pour l'entier 123 la somme est 1 + 2 + 3 soit 6
+     * 
+     * Indice : utiliser une boucle "while"
+     *
+     * @param int $n Le nombre à analyser
+     * @return int La somme de ses chiffres
      */
-    public static function getOddValues(array $array): array
+    public static function sumDigits(int $n): int
     {
-        $oddValues = [];
+        // variable qui contiendra le résultat
+        $sum = 0;
+        
+        // Indice il est possible de retrouver le chiffre le plus à droite (par exemple 3 pour 123) en récupérant le reste de la divisio par 10
+        // L'opérateur permettant de calculer le reste est le modulo (%)
+        // Par exemple : 123 % 10 retourne 3
+        // puis 12 % 10 retoure 2
+        // ...
 
-        foreach ($array as $value) {
-            if ($value % 2 !== 0) {
-                $oddValues[] = $value;
-            }
-        }
-
-        return $oddValues;
+        return $sum;
     }
 }

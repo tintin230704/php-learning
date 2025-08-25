@@ -1,6 +1,66 @@
 <?php
 
-class ArrayExercises {
+/**
+ * Cette classe contient un ensemble de fonctions à compléter qui vous permettront de vous entraîner à la manipulation de tableaux 1D et 2D.
+ * 
+ * Pour chacune des fonctions pensez à écrire un pseudo-code qui vous permettra de réfléchir à la logique à implémenter.
+ */
+class ArrayExercises
+{
+
+    /**
+     * Additionne tous les éléments d'un tableau d'entiers.
+     *
+     * @param array $array Le tableau à traiter
+     * @return integer Le résultat de l'addition. Doit retourner 0 si un tableu vide est passé
+     */
+    public static function sumAllElements(array $array): int
+    {
+
+        // TODO utiliser une boucle "for" ou "while" pour passer en revue les éléments d'un tableau
+
+        return -1;
+    }
+
+    /**
+     * Additionne les éléments d'un tableau d'entiers situé entre deux index.
+     * Les éléments pointés par les index sont compris dans la somme.
+     * 
+     * Exemple :
+     * pour le tableau [42, 12, 13, 25] et les index 1 et 3 le résultat devrait être 50
+     * 
+     * Il faudra penser à plusieurs cas particuliers à traiter :
+     * 1. renvoyer -1 si l'index de départ est plus grand que l'index de fin
+     * 2. prendre en compte tous les éléments à partir de l'index de début si l'index de fin est plus grand que la taille du tableau
+     *
+     * @param array $array
+     * @return integer
+     */
+    public static function sumBetweenIndexes(array $array, int $start, int $end): int
+    {
+        return -1;
+    }
+
+    /**
+     * Crée une liste de tous les nombres impairs contenus dans un tableau d'entiers.
+     * 
+     * Un tableau vide doit être retourné si aucun élément n'est impair
+     * 
+     * 0 est un nombre pair.
+     * 
+     * @param array $array Tableau d'entiers
+     * @return array Tableau contenant uniquement les valeurs impaires
+     */
+    public static function getOddValues(array $array): array
+    {
+        // tableau stockant les résultats
+        $oddValues = [];
+
+        // TODO implémenter la suite de l'algorithme
+        // pour ajouter un élément à un tableau vous pourrez utiliser la fonciton "array_push" : https://www.php.net/manual/en/function.array-push.php
+
+        return $oddValues;
+    }
 
     /**
      * Compare les valeurs de deux tableaux d'entiers.
@@ -12,7 +72,8 @@ class ArrayExercises {
      * 
      * @return bool true si les tableaux sont identiques, false sinon.
      */
-    public static function compareArray(array $array1, array $array2): bool {
+    public static function compareArray(array $array1, array $array2): bool
+    {
 
         return true;
     }
@@ -21,11 +82,17 @@ class ArrayExercises {
      * Crée un nouveau tableau miroir de celui passé en paramètre.
      * Exemple :
      * [5, 10, 2, 23] en entrée doit donner [23, 2, 10, 5]
+     * 
+     * Il vous est demandé de trouver une solution utilisant une ou plusieurs boucles (et non pas l'appel à une fonction native PHP)
      *
      * @param array $toReverse Tableau à traiter
      * @return array Nouveau tableau miroir
      */
-    public static function reverseArray(array $toReverse): array {
+    public static function reverseArray(array $toReverse): array
+    {
+        // Indice : déclarer ici un nouveau tableau
+
+        // TODO trouver une façon de faire une boucle pour passer en revue les éléments comme souhaité
 
         return [];
     }
@@ -36,10 +103,27 @@ class ArrayExercises {
      * @param array $array Le tableau à traiter.
      * @return int La somme des éléments.
      */
-    public static function sumNumbersAtOddIndex(array $array): int {
+    public static function sumNumbersAtOddIndex(array $array): int
+    {
 
         return -1;
     }
+
+    /**
+     * Retrouve et retourne l'index de la plus longue chaîne de caractères d'un tableau.
+     * 
+     * @param array $strings Tableau de chaînes de caractères
+     * @return int Index de la plus longue chaîne
+     */
+    public static function findLongestString(array $strings): int
+    {
+
+        // Indice : pour trouver la longueur d'une chaîne de caracètres il est possible d'utiliser la fonction
+        // "strlen" (https://www.php.net/manual/fr/function.strlen.php)
+
+        return "";
+    }
+
 
     /**
      * Additionne des tableaux 2D d'entiers de même taille (addition matricielle).
@@ -53,7 +137,8 @@ class ArrayExercises {
      * @param array $array2 Second tableau à additionner
      * @return array La somme des tableaux à 2 dimensions
      */
-    public static function addArrays(array $array1, array $array2): array {
+    public static function addArrays(array $array1, array $array2): array
+    {
         // TODO compléter le code
         // déclaration du tableau résultat
         $sumArray = [];
@@ -73,7 +158,8 @@ class ArrayExercises {
      * @param array $array Le tableau 2D à traiter.
      * @return int La somme des lignes impaires.
      */
-    public static function sumOddLines(array $array): int {
+    public static function sumOddLines(array $array): int
+    {
         $result = 0;
 
 
@@ -93,7 +179,8 @@ class ArrayExercises {
      * @param array $toProcess Tableau à traiter.
      * @return int La somme des nombres de la diagonale.
      */
-    public static function sumDiagonalNumbers(array $toProcess): int {
+    public static function sumDiagonalNumbers(array $toProcess): int
+    {
         $sum = 0;
 
         return $sum;
@@ -116,7 +203,8 @@ class ArrayExercises {
      * @param array $toProcess Le tableau à traiter.
      * @return int La somme des nombres des bords.
      */
-    public static function sumBordersNumbers(array $toProcess): int {
+    public static function sumBordersNumbers(array $toProcess): int
+    {
 
 
         return -1;
@@ -147,7 +235,8 @@ class ArrayExercises {
      * @param string $toLocate Le mot à localiser.
      * @return array Tableau contenant deux paires [i, j] : début et fin du mot.
      */
-    public static function wordSearch(array $array, string $toLocate): array {
+    public static function wordSearch(array $array, string $toLocate): array
+    {
         $rows = count($array);
         $cols = count($array[0]);
         $len = strlen($toLocate);

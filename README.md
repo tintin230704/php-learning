@@ -10,9 +10,10 @@ Compétences abordées :
 ## Contenu du dépôt
 
 Ce projet est divisé en plusieurs fichiers PHP à compléter, tous contenus dans le sous-dossier `src` :
-1. `LoopExercises.php` : entraînement à l'utilisation de boucles
-2. `ArrayExercises.php` : entraînement à la manipulation de tableaux
-3. `StringExercises.php` : entraînement à la manipulation de chaînes de caractères
+1. `BasicsExercises.php` : prise en main du langage
+2. `LoopExercises.php` : entraînement à l'utilisation de boucles
+3. `ArrayExercises.php` : entraînement à la manipulation de tableaux
+4. `StringExercises.php` : entraînement à la manipulation de chaînes de caractères
 
 Pour chacun de ces fichier, un fichier de test est fourni.
 Il vous faudra compléter les fonctions proposées dans les fichiers suffixés par `Exercises` pour que les tests fonctionnent.
@@ -59,8 +60,9 @@ Ceci vous permettra d'accéder au menu de test comme présenté par l'image ci-d
 ## Marche à suivre 
 
 Prenez connaissance des fonctions à compléter dans l'ordre suivant :
-1. `LoopExercises.php` : entraînement à l'utilisation de boucles
-2. `ArrayExercises.php` : entraînement à la manipulation de tableaux
-3. `StringExercises.php` : entraînement à la manipulation de chaînes de caractères
+1. `BasicsExercises.php` : prise en main du langage
+2. `LoopExercises.php` : entraînement à l'utilisation de boucles
+3. `ArrayExercises.php` : entraînement à la manipulation de tableaux
+4. `StringExercises.php` : entraînement à la manipulation de chaînes de caractères
 
 Pour chacune des fonctions l'objectif est de satisfaire le test untiaire associé.
