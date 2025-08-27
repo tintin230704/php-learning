@@ -20,7 +20,13 @@ class LoopExercises
     public static function sumUpTo(int $n): int
     {
         // TODO compléter la fonction avec une boucle for ou while
-
+        if ($n >= 0) {
+            $somme = 0;
+            for ($i = 0; $i <= $n; $i++) {
+                $somme += $i;
+            }
+            return $somme;
+        }
         return -1;
     }
 
@@ -46,10 +52,47 @@ class LoopExercises
     public static function estimateSubscribers(int $initialSubscribers, float $growthRate, int $months): int
     {
         // variable qui contiendra le résultat
-        $estimatedSubscribers = 0;
+
+        $estimatedSubscribers = $initialSubscribers;
+        for ($i = 0; $i < $months; $i++) {
+            $estimatedSubscribers = $initialSubscribers + ($initialSubscribers * ($growthRate / 100));
+            $initialSubscribers = $estimatedSubscribers;
+        }
 
         // Indice : pour arrondir un entier il vous est possible d'utiliser la fonction "round" (https://www.php.net/manual/en/function.round.php)
-        return $estimatedSubscribers;
+        return round($estimatedSubscribers);
+    }
+
+    /**
+     * Contexte :
+     * Nous déveleppons un jeu vidéo. Nous allons simuler la progression d'un personnage dans un donjon.
+     * Un personnage évolue dans un donjon tour par tour.
+     * 
+     * A chaque tour, il gagne de l'expérience. Il doit atteindre un objectif fixé pour terminer le donjon.
+     * Le personnage débute avec 0 XP.
+     * 
+     * Règle d'évolution de l'expérience gagnée :
+     * - Pour chaque tour 'n' (commençant à 1), le héros gagne 5 * n + 10 XP.
+     * - Tours les 3 tours (par exemple n = 3, n = 6, n = 9) le personnage fait face à un boss et gagne un bonus fixe de 30 XP et non pas 10 XP. Par exemple 5 * n + 30 XP.
+     * 
+     * La fonction doit calculer le nombre de tours nécessaires pour atteindre l'XP ciblée (paramètre $xpGoal)
+     * 
+     * @param integer $xpGoal
+     * @return integer Le nombre de tours nécessaires poour atteindre l'objectif
+     */
+    public static function startDungeon(int $xpGoal): int
+    {
+        $xp = 0;
+        $turns = 0;
+        while ($xp < $xpGoal) {
+            $turns++;
+            if ($turns % 3 == 0) {
+                $xp += (5 * $turns) + 30;
+            } else {
+                $xp += (5 * $turns) + 10;
+            }
+        }
+        return $turns;
     }
 
     /**
@@ -67,7 +110,13 @@ class LoopExercises
     function factorial($n): int
     {
         // TODO : Utiliser une boucle for pour calculer la factorielle
-
+        if ($n >= 0) {
+            $factorielle = 1;
+            for ($i = 1; $i <= $n; $i++) {
+                $factorielle *= $i;
+            }
+            return $factorielle;
+        }
         return 0;
     }
 
@@ -86,7 +135,11 @@ class LoopExercises
     {
         // variable qui contiendra le résultat
         $sum = 0;
-        
+        while ($n > 0) {
+            $sum += $n % 10;
+            $n = intdiv($n, 10);
+        }
+
         // Indice il est possible de retrouver le chiffre le plus à droite (par exemple 3 pour 123) en récupérant le reste de la divisio par 10
         // L'opérateur permettant de calculer le reste est le modulo (%)
         // Par exemple : 123 % 10 retourne 3

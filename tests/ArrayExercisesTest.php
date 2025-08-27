@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../src/ArrayExercises.php';
+require_once __DIR__ . '/../src/ArrayExercisesTest.php';
 
 class ArrayExercisesTest extends TestCase
 {

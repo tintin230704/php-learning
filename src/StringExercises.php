@@ -18,11 +18,17 @@ class StringExercises
 
         // une comparaison de caractères peut se faire avec l'opérateur === 
         // ainsi, il est possible d'utiliser $str[$i] === $c
-        
+        $count = 0;
+        for ($i = 0; $i < strlen($str); $i++); {
+            if ($str[$i] === $c) {
+                $count++;
+            }
+        }
+        return $count;
         return -1;
     }
 
-    
+
     /**
      * Compte le nombre de caractères minuscules.
      * 
@@ -33,7 +39,12 @@ class StringExercises
     {
         // TODO trouver une solution en utilisant une boucle et l'utilisation d'une fonction telle que ctype_lower
         // (plus d'informations sur ctyp_lower ici https://www.php.net/manual/en/function.ctype-lower.php)
-
+        for ($i = 0; $i < strlen($str); $i++); {
+            if (ctype_lower($str[$i])) {
+                return 1;
+            }
+        }
+        return 0;
         return -1;
     }
 
@@ -52,6 +63,11 @@ class StringExercises
      */
     public static function mirrorString(string $str): string
     {
+        $result = "";
+        for ($i = strlen($str) - 1; $i >= 0; $i--) {
+            $result .= $str[$i];
+        }
+        return $result;
         return "";
     }
 
@@ -81,7 +97,20 @@ class StringExercises
         // Indice : en premier lieu vous pouvez créer une chaîne de caractères $result qui contiendra la chaîne finale
 
         // travailler avec des boucles "for" ou "while"
-
+        if ($index < 0) {
+            return $str;
+        }
+        if ($index > strlen($str)) {
+            return $str . $toInsert;
+        }
+        $result = "";
+        for ($i = 0; $i < strlen($str); $i++) {
+            if ($i == $index) {
+                $result .= $toInsert;
+            }
+            $result .= $str[$i];
+        }
+        return $result;
         return "";
     }
 
@@ -93,6 +122,8 @@ class StringExercises
      */
     public static function isCamelCaseCompliant(string $str): bool
     {
+        if (ctype_lower($str[0])){}
+        }
         return false;
     }
 
@@ -215,3 +246,5 @@ class StringExercises
         return "";
     }
 }
+
+        }

@@ -4,7 +4,8 @@ use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../src/LoopExercises.php';
 
-class ArrayExercisesTest extends TestCase {
+class LoopExercisesTest extends TestCase
+{
     public function testSumUpTo()
     {
         // Cas simples
@@ -14,6 +15,31 @@ class ArrayExercisesTest extends TestCase {
         $this->assertEquals(15, LoopExercises::sumUpTo(5), "La somme de 0 à 5 devrait être 15");
         $this->assertEquals(55, LoopExercises::sumUpTo(10), "La somme de 0 à 10 devrait être 55");
         $this->assertEquals(5050, LoopExercises::sumUpTo(100), "La somme de 0 à 100 devrait être 5050");
+    }
+
+    public function testEstimateSubscribers()
+    {
+        $this->assertEquals(2894, LoopExercises::estimateSubscribers(2500, 5, 3));
+        $this->assertEquals(2500, LoopExercises::estimateSubscribers(2500, 0, 5));
+        $this->assertEquals(2500, LoopExercises::estimateSubscribers(2500, 5, 0));
+        $this->assertEquals(0, LoopExercises::estimateSubscribers(0, 10, 12));
+    }
+
+    public function testStartDungeon(): void
+    {
+        // Cas 1 : Objectif atteint en 1 tour (15 XP)
+        $this->assertEquals(1, LoopExercises::startDungeon(15), 'Objectif de 15 XP devrait être atteint en 1 tour (5*1 + 10 = 15 XP)');
+
+        // Cas 2 : Objectif nécessitant 2 tours, sans boss (35 XP)
+        $this->assertEquals(2, LoopExercises::startDungeon(35), 'Objectif de 35 XP devrait être atteint en 2 tours (15 + 20 = 35 XP)');
+
+        $this->assertEquals(4, LoopExercises::startDungeon(90), 'Objectif de 90 XP devrait être atteint en 4 tours (15 + 20 + 45 + 30 = 110 XP, avec boss à n=3)');
+
+        // Cas 4 : Objectif juste après un tour de boss (91 XP)
+        $this->assertEquals(4, LoopExercises::startDungeon(91), 'Objectif de 91 XP devrait être atteint en 4 tours (15 + 20 + 55 + 25 = 115 XP)');
+
+        // Cas 5 : Objectif de 0 XP (cas limite)
+        $this->assertEquals(0, LoopExercises::startDungeon(0), 'Objectif de 0 XP devrait être atteint en 0 tours');
     }
 
     public function testSumDigits()
