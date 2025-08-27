@@ -122,10 +122,18 @@ class StringExercises
      */
     public static function isCamelCaseCompliant(string $str): bool
     {
-        if (ctype_lower($str[0])){}
+        if (ctype_lower($str[0])) {
+            for ($i = 1; $i < strlen($str); $i++) {
+                if (!ctype_lower($str[$i]) && !ctype_upper($str[$i]) && !is_numeric($str[$i])) {
+                    return false;
+                }
+                if (ctype_upper($str[$i]) && ctype_upper($str[$i - 1])) {
+                    return false;
+                }
+            }
+            return true;
         }
         return false;
-    }
 
     /**
      * Convertit une chaîne en camelCase (sans caractères non alphanumériques).
@@ -138,7 +146,6 @@ class StringExercises
     {
         return $str;
     }
-
     /**
      * Extrait une sous-chaîne d'une chaîne source donnée.
      * 
