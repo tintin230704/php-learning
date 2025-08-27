@@ -134,6 +134,7 @@ class StringExercises
             return true;
         }
         return false;
+    }
 
     /**
      * Convertit une chaîne en camelCase (sans caractères non alphanumériques).
@@ -253,5 +254,3 @@ class StringExercises
         return "";
     }
 }
-
-        }
